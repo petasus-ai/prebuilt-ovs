@@ -15,6 +15,9 @@ if grep -q "Rocky-Linux-8" /etc/os-release; then
 elif grep -q "Rocky-Linux-9" /etc/os-release; then
 	RELEASE="RedHat-9"
 	DEVEL_REPO="crb"
+elif grep -q "Rocky-Linux-10" /etc/os-release; then
+	RELEASE="RedHat-10"
+	DEVEL_REPO="crb"
 else
 	echo "$(cat /etc/system-release) is not supported"
 	exit 1
@@ -33,6 +36,11 @@ elif [[ ${RELEASE} == "RedHat-9" ]]; then
 	# https://cbs.centos.org/koji/builds?tagID=2748 / ver. 2024.05.28
 	OVS_VERSION="3.3"
 	RPM_SRC="https://cbs.centos.org/kojifiles/packages/openvswitch3.3/3.3.0/2.el9/src/openvswitch3.3-3.3.0-2.el9.src.rpm"
+	RPM_SELINUX="https://cbs.centos.org/kojifiles/packages/openvswitch-selinux-extra-policy/1.0/30.el9/noarch/openvswitch-selinux-extra-policy-1.0-30.el9.noarch.rpm"
+elif [[ ${RELEASE} == "RedHat-10" ]]; then
+	# https://cbs.centos.org/koji/builds?tagID=2748 / ver. 2025.04.24
+	OVS_VERSION="3.3"
+	RPM_SRC="https://cbs.centos.org/kojifiles/packages/openvswitch3.3/3.3.4/107.el9/src/openvswitch3.3-3.3.4-107.el9.src.rpm"
 	RPM_SELINUX="https://cbs.centos.org/kojifiles/packages/openvswitch-selinux-extra-policy/1.0/30.el9/noarch/openvswitch-selinux-extra-policy-1.0-30.el9.noarch.rpm"
 else
 	echo "Unknown RELEASE: ${RELEASE}"

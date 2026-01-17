@@ -1,8 +1,10 @@
 # Prebuilt OVS
 
 Supported OS:
+
 - Rocky 8 / OVS version 3.1
 - Rocky 9 / OVS version 3.3
+- Rocky 10 / OVS version 3.3
 
 ## ONOS SONA OpenFlow Version Issue
 
