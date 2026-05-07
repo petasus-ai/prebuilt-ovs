@@ -3,8 +3,8 @@
 Supported OS:
 
 - Rocky 8 / OVS version 3.1
-- Rocky 9 / OVS version 3.3
-- Rocky 10 / OVS version 3.3
+- Rocky 9 / OVS version 3.7
+- Rocky 10 / OVS version 3.7
 
 ## ONOS SONA OpenFlow Version Issue
 
